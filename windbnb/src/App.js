@@ -1,11 +1,12 @@
 import React from 'react';
-import Cards from './components/Cards.js'
+import Stays from './components/Stays.js'
+import { stays } from './stays.js';
 import './index.css';
 
 const App = () => {
   return ( 
-    <div>
- <Cards />
+    <div className='details'>
+<Stays location={stays}/>
     </div>
    );
 }

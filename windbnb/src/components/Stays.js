@@ -4,6 +4,7 @@ import Cards from './Cards.js';
 const Stays = ({ location }) => {
   const cities = location.map((locations, i) => {
     return (
+        <div className=''>
       <Cards
         key={location[i].id}
         title={location[i].title}
@@ -16,6 +17,7 @@ const Stays = ({ location }) => {
         type={location[i].type}
         beds={location[i].beds}
       />
+      </div>
     );
   });
   return <div className='location'>{cities}</div>

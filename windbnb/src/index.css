@@ -6,7 +6,11 @@ body {
 .container {
   width: 100%;
 }
-.location {
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
  
 }
 
