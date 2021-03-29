@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Stays from './components/Stays.js';
+// import App from './App';
+import { stays } from './stays.js';
+
 
 ReactDOM.render(
-    <App />, document.getElementById('root')
+    <Stays location={stays}/>, document.getElementById('root')
 );
 

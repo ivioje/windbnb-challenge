@@ -1,26 +1,17 @@
 import React from 'react';
 
-const Cards = () => {
+const Cards = ({ photo, title, rating, superHost, beds, type }) => {
   return (
     <div className='container'>
-      <h2>Stays in Finland</h2>
-      <h3>12+ stays</h3>
-      <div className='card_layout'>
-        <div className='card_items'>
-          <img
-            src={`https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80`}
-            alt='card'
-          />
-          <div className='card_des'>
-            <button>
-              <p>SUPER HOST</p>
-            </button>
-            <p2>Entire apartment. 2 beds</p2>
-            <p3><span>	
-&#9734;</span> 4.40</p3>
-          </div>
-          <h4>Stylist apartment in center of the city</h4>
-        </div>
+      <div className='card_items'>
+        <img src={photo} alt='card' />
+        <button>{superHost === true ? 'Super Host' : ''}</button>
+        <p>{type}.</p> <p>{beds === 1 ? beds + ' bed' : beds + ' beds'}</p>
+        <p>
+          <span>&#9734;</span>
+          {rating}
+        </p>
+        <h4>{title}</h4>
       </div>
     </div>
   );
