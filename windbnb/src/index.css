@@ -22,3 +22,7 @@ body {
   height: 269px;
   max-width: 395px;
 }
+.container .des {
+  font-size: 15px;
+ display: flex;
+}

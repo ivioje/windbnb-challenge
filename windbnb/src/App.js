@@ -6,7 +6,7 @@ import './App.css';
 
 const App = () => {
   return ( 
-    <div className='details'>
+    <div>
 <Stays location={stays}/>
     </div>
    );
