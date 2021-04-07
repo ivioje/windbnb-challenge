@@ -4,10 +4,15 @@ const Cards = ({ photo, title, rating, superHost, beds, type }) => {
   return (
     <div className='container'>
       <div>
+        <div className='img'>
         <img src={photo} alt='card' />
+        </div>
         <div className='des'>
-        <p>{superHost === true ? 'Super Host' : ''}</p>
-        <p>{type}.</p> <p>{beds === null ? '' : beds + ' beds'}</p>
+        <div className='first-p'>{superHost === true ? 'Super Host' : <msg className='msg'></msg>} </div>
+        <div className='type'>
+        <p >{type}.</p>
+        </div>
+       <p>{beds === null ? '' : beds + ' beds'}</p>
         <p>
           <span>&#9734;</span>
           {rating}
