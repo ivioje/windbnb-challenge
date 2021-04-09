@@ -26,7 +26,10 @@ body {
   height: 267px;
   width: 100%;
 }
-
+.container div h4 {
+  margin-top: -15px;
+  font-weight: 700;
+}
 .container .des {
   display: flex;
   font-size: 14px;
@@ -36,7 +39,7 @@ body {
   height: 10vh;
 }
 .container .des .type {
-  width: 150%;
+  width: 180%;
 }
 .container .des .host {
   width: auto;
@@ -51,6 +54,14 @@ body {
   padding: .5rem;
   margin-top: -8px;
    font-size: 12px;
+   color:#4F4F4F;
+   font-weight: 700;
+}
+.align-end {
+  text-align: end;
+}
+.align-center {
+  text-align: center;
 }
 @media screen and (max-width: 1037px) {
   .container {
@@ -79,7 +90,7 @@ body {
 @media screen and (max-width: 400px) {
   .container {
     width: 95%;
-    min-width: 30px;
+    min-width: 50px;
   }
   .container div img {
     min-width: 150px;

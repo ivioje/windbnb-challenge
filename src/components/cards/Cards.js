@@ -18,8 +18,8 @@ const Cards = ({ photo, title, rating, superHost, beds, type }) => {
           <div className='type'>
             <p>{type}.</p>
           </div>
-          <p>{beds === null ? '' : beds + ' beds'}</p>
-          <p>
+          <p className='align-center'>{beds === null ? '' : beds + ' beds'}</p>
+          <p className='align-end'>
             <span>&#9734;</span>
             {rating}
           </p>
