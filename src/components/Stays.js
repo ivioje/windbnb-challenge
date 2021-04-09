@@ -7,6 +7,7 @@ const Stays = ({ location }) => {
           {
           location.map((locations, i) => {
      return ( 
+       
      <Cards  
         key={location[i].id}
         title={location[i].title}
