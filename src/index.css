@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -10,48 +10,52 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 .location {
-display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 .container {
-    width: 33%;
-    padding: 1rem;
-    margin-bottom: 5px;
+  width: 33%;
+  padding: 1rem;
+  margin-bottom: 5px;
 }
 .container div .img img {
-    border-radius: 24px;
-    height: 267px;
-    width: 100%;
+  border-radius: 24px;
+  height: 267px;
+  width: 100%;
 }
 
 .container .des {
-border: 1px solid black;
-display: flex;
-font-size: 14px;
-line-height: 17px;
-font-weight: bold;
-color: #828282;
-height: 10vh;
+  display: flex;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #828282;
+  height: 10vh;
 }
 .container .des .type {
-   border: 1px solid red;
-   width: 180%;
+  width: 150%;
 }
-.container .des .first-p {
-  border: 1px solid yellow;
-  cursor: pointer;
+.container .des .host {
+  width: auto;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 10px;
 }
-.msg {
-  display: none;
- 
+.container .des div .first-p {
+  width: 100px;
+  border: 1px solid #828282;
+  border-radius: 13px;
+  padding: .5rem;
+  margin-top: -8px;
+   font-size: 12px;
 }
-@media screen and (max-width:1037px) {
-    .container {
-        width: 50%;
-    }
+@media screen and (max-width: 1037px) {
+  .container {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 768px) {
   .container {
@@ -64,7 +68,7 @@ height: 10vh;
     height: 260px;
   }
 }
-@media screen and (max-width:610px) {
+@media screen and (max-width: 610px) {
   .container {
     width: 90%;
   }
@@ -72,7 +76,7 @@ height: 10vh;
     padding: 1rem;
   }
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px) {
   .container {
     width: 95%;
     min-width: 30px;

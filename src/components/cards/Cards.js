@@ -5,18 +5,24 @@ const Cards = ({ photo, title, rating, superHost, beds, type }) => {
     <div className='container'>
       <div>
         <div className='img'>
-        <img src={photo} alt='card' />
+          <img src={photo} alt='card' />
         </div>
         <div className='des'>
-        <div className='first-p'>{superHost === true ? 'Super Host' : <msg className='msg'></msg>} </div>
-        <div className='type'>
-        <p >{type}.</p>
-        </div>
-       <p>{beds === null ? '' : beds + ' beds'}</p>
-        <p>
-          <span>&#9734;</span>
-          {rating}
-        </p>
+          <div className='host'>
+            {superHost === true ? (
+              <p className='first-p'>Super host</p>
+            ) : (
+              <p className='second-p'></p>
+            )}{' '}
+          </div>
+          <div className='type'>
+            <p>{type}.</p>
+          </div>
+          <p>{beds === null ? '' : beds + ' beds'}</p>
+          <p>
+            <span>&#9734;</span>
+            {rating}
+          </p>
         </div>
         <h4>{title}</h4>
       </div>
