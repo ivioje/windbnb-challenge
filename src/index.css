@@ -69,7 +69,7 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 10px;
 }
-.stays h2{
+.stays h2 {
   font-size: larger;
   color: #333333;
 }
@@ -79,27 +79,49 @@ body {
   color: #4f4f4f;
 }
 .filter {
- display: grid;
- grid-template-columns: auto auto auto;
- text-align: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
   width: auto;
   float: right;
   font-weight: 500;
-  padding: 1rem;
+  padding: .5rem;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
 }
 
 .drawer {
   display: flex;
   align-items: center;
   justify-content: center;
-   border: 1px solid black;
-   padding: 1rem;
-   width: auto;
+  padding: 1rem;
+  width: auto;
 }
 .filter div {
   float: left;
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  padding: 0rem 3rem;
+}
+.logo img {
+  width: 100px;
+  height: 40px;
+  float: left;
+}
+.stays_location {
+  width: 150px;
+  border-right: 1px solid #f2f2f2;
+}
 
+.guest {
+  width: 120px;
+   border-right: 1px solid #f2f2f2;
+}
 
 @media screen and (max-width: 1037px) {
   .container {
@@ -119,7 +141,7 @@ body {
   .filter {
     float: none;
     width: 90%;
-   text-align: center;
+    text-align: center;
   }
 }
 @media screen and (max-width: 610px) {
@@ -128,6 +150,15 @@ body {
   }
   .location {
     padding: 1rem;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .logo {
+    padding: 0rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -144,14 +175,14 @@ body {
     margin-top: 0px;
   }
   .container .des div .first-p {
-    padding: .4rem;
+    padding: 0.4rem;
     font-size: 11px;
     width: 90px;
   }
 }
-@media screen and (max-width: 330px){
-  .container .des div .first-p{
-        margin-top: 7px;
+@media screen and (max-width: 330px) {
+  .container .des div .first-p {
+    margin-top: 7px;
   }
   .container div h4 {
     font-size: 14.5px;
@@ -165,8 +196,7 @@ body {
 }
 @media screen and (max-width: 250px) {
   .stays {
-   display: grid;
-   grid-template-columns: auto;
-    
+    display: grid;
+    grid-template-columns: auto;
   }
 }
