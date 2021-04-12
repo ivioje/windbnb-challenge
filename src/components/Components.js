@@ -16,7 +16,7 @@ const App = () => {
       </div>
       <div className='stays'>
         <h2>Stays in Finland</h2>
-        <h5>{stays.length > 12 ? '12+ stays' : stays.length + ' stays'}</h5>
+        <h5 className='stays_length'>{stays.length > 12 ? '12+ stays' : stays.length + ' stays'}</h5>
       </div>
       <Stays location={stays} />
     </div>

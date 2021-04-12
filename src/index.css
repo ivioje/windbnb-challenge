@@ -69,6 +69,9 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 10px;
 }
+.stays_length{
+  padding: 0rem 1rem 0rem 0rem;
+}
 .stays h2 {
   font-size: larger;
   color: #333333;
@@ -85,9 +88,13 @@ body {
   width: auto;
   float: right;
   font-weight: 500;
-  padding: .5rem;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+  padding: .5rem;
+  cursor: pointer;
+}
+.filter-drawer{
+  padding: 3.5rem;
 }
 
 .drawer {
