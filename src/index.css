@@ -69,7 +69,7 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 10px;
 }
-.stays_length{
+.stays_length {
   padding: 0rem 1rem 0rem 0rem;
 }
 .stays h2 {
@@ -90,10 +90,10 @@ body {
   font-weight: 500;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  padding: .5rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
-.filter-drawer{
+.filter-drawer {
   padding: 3.5rem;
 }
 
@@ -103,6 +103,9 @@ body {
   justify-content: center;
   padding: 1rem;
   width: auto;
+}
+.search_drawer {
+  padding-left: 1rem;
 }
 .filter div {
   float: left;
@@ -127,7 +130,46 @@ body {
 
 .guest {
   width: 120px;
-   border-right: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 90%;
+  padding: 0.2rem;
+}
+.btn-s {
+  text-align: center;
+}
+.items {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 14px;
+}
+.sub_item {
+  padding-left: 4.3rem;
+  margin-top: 10px;
+}
+.btn-i {
+  background: #eb5757;
+  border-radius: 16px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+}
+.btn {
+  width: 100px;
+  padding: 1rem;
+  cursor: pointer;
+}
+.all{
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 1037px) {
