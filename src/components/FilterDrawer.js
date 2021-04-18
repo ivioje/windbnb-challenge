@@ -3,24 +3,24 @@ import React from 'react';
 const FilterDrawer = () => {
   return (
     <div className='all'>
-    <div className='items'>
-    <div className='search'>
-      <div className='search_drawer'>
-        <h5>LOCATION</h5>
-        <p>Helsink, Finland</p>
+      <div className='items'>
+        <div className='search'>
+          <div className='search_drawer'>
+            <h5>LOCATION</h5>
+            <p>Helsink, Finland</p>
+          </div>
+          <div className='search_drawer'>
+            <h5>GUESTS</h5>
+            <p style={{ color: '#bbb' }}>Add guests</p>
+          </div>
+          <div className='search_drawer btn-s'>
+            <button className='btn btn-i'>Search</button>
+          </div>
+        </div>
+        <div className='sub_item'>
+          <Location />
+        </div>
       </div>
-      <div className='search_drawer'>
-        <h5>GUESTS</h5>
-        <p style={{color: '#bbb'}}>Add guests</p>
-      </div>
-      <div className='search_drawer btn-s'>
-      <button className='btn btn-i'>Search</button>
-      </div>
-    </div>
-     <div className='sub_item'>
-    <Location />
-    </div>
-    </div>
     </div>
   );
 };
