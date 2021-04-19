@@ -27,7 +27,7 @@ const App = () => {
               top: '0px',
               left: '0px',
               right: '0px',
-              height: '50vh',
+              height: '55vh',
             },
           }}
         >

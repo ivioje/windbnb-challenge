@@ -28,7 +28,7 @@ const FilterDrawer = () => {
 const Location = () => {
   return (
     <div>
-      <div>
+      <div className='location_list'>
         <p>Helsink,Finland</p>
         <p>Turku,Finland</p>
         <p>Oulu,Finland</p>
