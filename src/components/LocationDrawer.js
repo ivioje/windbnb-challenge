@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FilterDrawer = () => {
+const LocationDrawer = () => {
   return (
     <div className='all'>
       <div className='items'>
         <div className='search'>
-          <div className='search_drawer'>
+          <div className='search_drawer' style={{border: '1px solid #000', padding:'1rem'}}>
             <h5>LOCATION</h5>
             <p>Helsink, Finland</p>
           </div>
@@ -17,7 +17,7 @@ const FilterDrawer = () => {
             <button className='btn btn-i'>Search</button>
           </div>
         </div>
-        <div className='sub_item'>
+        <div>
           <Location />
         </div>
       </div>
@@ -37,25 +37,4 @@ const Location = () => {
     </div>
   );
 };
-
-const Guests = () => {
-  return (
-    <div>
-      <div>
-        <p>Adults</p>
-        <p>Ages 13 or above</p>
-        <div>
-          <button className='btn'>-</button> 0 <butt>+</butt>
-        </div>
-      </div>
-      <div>
-        <p>Children</p>
-        <p>Ages 2-12</p>
-        <div>
-          <button className='btn'>-</button> 0 <butt>+</butt>
-        </div>
-      </div>
-    </div>
-  );
-};
-export default FilterDrawer;
+export default LocationDrawer;
