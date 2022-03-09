@@ -22,7 +22,7 @@ const CardList = ({ stays }) => {
                             </div>
                             <p><img src={ratingStar} alt='' style={{ 'maxWidth': '100%' }} /> {stay.rating}</p>
                         </div>
-                        <p className='title'>{stay.title}</p>
+                        <p className='title' title={stay.title}>{stay.title}</p>
                     </div>
                 </div>
             ))}
