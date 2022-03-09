@@ -11,6 +11,7 @@
     "react-modal": "^3.13.1",
     "react-scripts": "4.0.3",
     "react-simple-hook-modal": "^1.1.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

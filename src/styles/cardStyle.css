@@ -1,0 +1,52 @@
+.mappedCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container {
+    max-width: 30%;
+    padding: 1rem;
+    margin-bottom: 5px;
+}
+.contents_img {
+     border-radius: 24px;
+     max-width: 100%;
+     max-height: 269px;
+     width: 395px;
+     height: 269px;
+}
+.card_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0rem;
+}
+.host {
+    color: #4F4F4F !important;
+    border: 1px solid #4F4F4F;
+    border-radius: 12px;
+    padding: .3rem;
+    font-size: 12px;
+
+}
+.title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 20px;
+    color: #333333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card_footer >* {
+    color: #828282;
+}
+.card_footer_sub {
+    display: flex;
+}
+.card_footer_sub p {
+    margin-right: 3px;
+}
