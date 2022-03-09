@@ -1,12 +1,11 @@
 import React from 'react';
-import { stays } from './components/stays.js'
-import CardList from './components/card/cardList.js';
 import './App.css';
+import HomePage from './components/HomePage.js';
 
 const App = () => {
   return (
     <div>
-      <CardList stays={stays} />
+      <HomePage />
     </div>
   );
 };
