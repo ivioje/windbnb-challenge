@@ -1,6 +1,19 @@
 import React from 'react';
 import Search from './search';
-import { Items, Top, H6, LocationDiv, GuestTitle, LocTitle, LocationList, GuestDiv, GuestList, Adult, Children, SearchBtn } from '../../../styles/drawer.styles'
+import {
+    Items,
+    Top,
+    H6,
+    LocationDiv,
+    GuestTitle,
+    LocTitle,
+    LocationList,
+    GuestDiv,
+    GuestList,
+    Adult,
+    Children,
+    SearchBtn
+} from '../../../styles/drawer.styles'
 
 
 const DrawerItems = ({ click,
