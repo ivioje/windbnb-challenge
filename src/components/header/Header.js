@@ -8,6 +8,24 @@ Modal.setAppElement('#root');
 
 const Header = () => {
     const [openModal, setOpenModal] = useState(false);
+    const [click, setClick] = useState(true);
+    const [otherClick, setOtherClick] = useState(false);
+
+    const handleClick = () => {
+        setClick(!click)
+        setOtherClick(false)
+        document.getElementById('guest').style.border = 'none';
+        document.getElementById('title').style.border = '1px solid #000';
+    }
+    const otherHandleClick = () => {
+        setOtherClick(!otherClick)
+        setClick(false)
+        document.getElementById('title').style.border = 'none';
+        document.getElementById('guest').style.border = '1px solid #000';
+    }
+    const handleCloseModal = () => {
+        setOpenModal(!openModal)
+    }
 
     return (
         <Container>
@@ -28,7 +46,17 @@ const Header = () => {
                 </div>
 
             </Drawer>
-            <PopUp open={openModal} setModal={setOpenModal} />
+            <PopUp
+                open={openModal}
+                setModal={setOpenModal}
+                click={click}
+                setClick={setClick}
+                otherClick={otherClick}
+                setOtherClick={setOtherClick}
+                handleClick={handleClick}
+                otherHandleClick={otherHandleClick}
+                handleCloseModal={handleCloseModal}
+            />
         </Container>
     )
 }
