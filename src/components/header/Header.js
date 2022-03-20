@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../assets/logo.svg';
 import { Drawer, Logo, Container } from '../../styles/Header';
 import Modal from 'react-modal';
@@ -6,26 +6,16 @@ import PopUp from './Modal';
 
 Modal.setAppElement('#root');
 
-const Header = () => {
-    const [openModal, setOpenModal] = useState(false);
-    const [click, setClick] = useState(true);
-    const [otherClick, setOtherClick] = useState(false);
-
-    const handleClick = () => {
-        setClick(!click)
-        setOtherClick(false)
-        document.getElementById('guest').style.border = 'none';
-        document.getElementById('title').style.border = '1px solid #000';
-    }
-    const otherHandleClick = () => {
-        setOtherClick(!otherClick)
-        setClick(false)
-        document.getElementById('title').style.border = 'none';
-        document.getElementById('guest').style.border = '1px solid #000';
-    }
-    const handleCloseModal = () => {
-        setOpenModal(!openModal)
-    }
+const Header = ({
+    setOpenModal,
+    openModal,
+    click,
+    setClick,
+    otherClick,
+    setOtherClick,
+    handleClick,
+    otherHandleClick,
+    handleCloseModal }) => {
 
     return (
         <Container>
