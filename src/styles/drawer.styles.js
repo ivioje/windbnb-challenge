@@ -65,20 +65,25 @@ padding-left: 1.6rem;
 }
 `;
 export const Title1 = styled.div`
-padding: 0.45rem;
+padding: .3rem;
 background: #FFFFFF;
 box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.08);
 border-top-right-radius: 16px;
 border-bottom-right-radius: 16px;
+display: flex;
+align-items: center;
+justify-content: center;
 
 & button {
-padding: .8rem;
-border: 1px solid crimson;
-background-color: crimson;
+padding: .75rem 2rem;
+border: 1px solid #EB5757;
+background-color: #EB5757;
 color: #fff;
 border-radius: 16px;
 font-weight: 600;
 cursor: pointer;
+display: flex;
+align-items: center;
 }
 
 @media screen and (max-width: 730px){
