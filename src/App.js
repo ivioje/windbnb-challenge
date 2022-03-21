@@ -10,7 +10,7 @@ const App = () => {
     const [click, setClick] = useState(true);
     const [otherClick, setOtherClick] = useState(false);
     const [searchInput, setSearchInput] = useState('');
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         setData([...stays])
@@ -32,14 +32,8 @@ const App = () => {
         setOpenModal(!openModal)
     }
     const onSearchChange = (e) => {
-        setSearchInput(e.target.value)
-        if (searchInput !== '') {
-            const filteredData = data.filter((item) => {
-                return item.city.toLowerCase().includes(searchInput.toLowerCase())
-            })
-            setData(filteredData)
-        }
-        else return data;
+        e.preventDefault()
+        
     }
 
 
@@ -55,13 +49,15 @@ const App = () => {
                 otherHandleClick={otherHandleClick}
                 handleCloseModal={handleCloseModal}
                 searchChange={onSearchChange}
-                input={searchInput}
+                setSearchInput={setSearchInput}
+                searchInput={searchInput}
+
             />
             <Container>
                 <h2>Stays in Finland</h2>
                 {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
-            <CardList stays={data} input={searchInput} />
+            <CardList stays={data} />
         </Wrapper>
     )
 }

@@ -2,19 +2,11 @@ import React from 'react';
 import ratingStar from '../assets/ratingStar.png';
 import '../styles/cardStyle.css'
 
-const CardList = ({ stays, input }) => {
+const CardList = ({ stays }) => {
 
     return (
         <div className='mappedCards'>
-            {stays.filter(item => {
-                if (input === '') {
-                    return item
-                }
-                else if (item.city.toLowerCase().includes(input.toLowerCase())) {
-                    return item
-                }
-                return false;
-            }).map((stay) => (
+            {stays.map((stay) => (
                 <div className='container' key={stay.id}>
                     <div className='contents'>
                         <img

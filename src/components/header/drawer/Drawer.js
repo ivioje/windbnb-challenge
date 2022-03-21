@@ -19,7 +19,10 @@ const DrawerItems = ({ click,
     handleClick,
     otherHandleClick,
     handleCloseModal,
-    searchChange }) => {
+    searchChange,
+    setSearchInput,
+    searchInput
+}) => {
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
@@ -53,7 +56,7 @@ const DrawerItems = ({ click,
                 <LocationDiv onClick={handleClick}>
                     <LocTitle style={titleStyle} id='title'>
                         <h6>LOCATION</h6>
-                        <input type='search' placeholder='Add location' />
+                        <input type='search' placeholder='Add location' value={searchInput} onChange={(e) =>setSearchInput(e.target.value)} />
                     </LocTitle>
                     {
                         click ?
@@ -70,7 +73,7 @@ const DrawerItems = ({ click,
                 <GuestDiv onClick={otherHandleClick}>
                     <GuestTitle id='guest'>
                         <h6>GUESTS</h6>
-                        <input placeholder='Add guests' value={countA + countB} readOnly ></input>
+                        <input value={countA + countB > 0 ? countA + countB : 'Add guests'} readOnly ></input>
                     </GuestTitle>
                     {
                         otherClick ?
@@ -86,7 +89,7 @@ const DrawerItems = ({ click,
                 </GuestDiv>
 
                 <SearchBtn>
-                    <Search change={searchChange}/>
+                    <Search searchChange={searchChange}/>
                 </SearchBtn>
             </Items>
 
