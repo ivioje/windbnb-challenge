@@ -15,7 +15,10 @@ const Header = ({
     setOtherClick,
     handleClick,
     otherHandleClick,
-    handleCloseModal }) => {
+    handleCloseModal,
+    searchChange,
+    input
+ }) => {
 
     return (
         <Container>
@@ -48,6 +51,9 @@ const Header = ({
                 handleClick={handleClick}
                 otherHandleClick={otherHandleClick}
                 handleCloseModal={handleCloseModal}
+                searchChange={searchChange}
+                input={input}
+
             />
         </Container>
     )

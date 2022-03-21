@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Search from './search';
 import {
     Items,
@@ -9,18 +9,33 @@ import {
     LocTitle,
     LocationList,
     GuestDiv,
-    GuestList,
-    Adult,
-    Children,
     SearchBtn
 } from '../../../styles/drawer.styles'
+import GuestsList from './Button';
 
 
 const DrawerItems = ({ click,
     otherClick,
     handleClick,
     otherHandleClick,
-    handleCloseModal }) => {
+    handleCloseModal,
+    searchChange }) => {
+
+    const [countA, setCountA] = useState(0);
+    const [countB, setCountB] = useState(0);
+
+    const handleIncrementA = () => {
+        setCountA(countA + 1)
+    }
+    const handleDecrementA = () => {
+        setCountA(countA - 1)
+    }
+    const handleIncrementB = () => {
+        setCountB(countB + 1)
+    }
+    const handleDecrementB = () => {
+        setCountB(countB - 1)
+    }
 
     const titleStyle = {
         borderTopLeftRadius: '16px',
@@ -38,7 +53,7 @@ const DrawerItems = ({ click,
                 <LocationDiv onClick={handleClick}>
                     <LocTitle style={titleStyle} id='title'>
                         <h6>LOCATION</h6>
-                        <input type='text' placeholder='Add location' />
+                        <input type='search' placeholder='Add location' />
                     </LocTitle>
                     {
                         click ?
@@ -55,28 +70,23 @@ const DrawerItems = ({ click,
                 <GuestDiv onClick={otherHandleClick}>
                     <GuestTitle id='guest'>
                         <h6>GUESTS</h6>
-                        <input type='text' placeholder='Add guests' />
+                        <input placeholder='Add guests' value={countA + countB} readOnly ></input>
                     </GuestTitle>
                     {
                         otherClick ?
-                            <GuestList className='guest'>
-                                <Adult>
-                                    <h6>Adults</h6>
-                                    <p>Ages 13 or above</p>
-                                    <button>-</button>0<button>+</button>
-                                </Adult>
-                                <Children>
-                                    <h6>Children</h6>
-                                    <p>Ages 2 - 12</p>
-                                    <button>-</button>0<button>+</button>
-                                </Children>
-                            </GuestList>
+                            <GuestsList
+                                incrementA={handleIncrementA}
+                                decrementA={handleDecrementA}
+                                incrementB={handleIncrementB}
+                                decrementB={handleDecrementB}
+                                countA={countA} countB={countB}
+                            />
                             : null
                     }
                 </GuestDiv>
 
                 <SearchBtn>
-                    <Search />
+                    <Search change={searchChange}/>
                 </SearchBtn>
             </Items>
 

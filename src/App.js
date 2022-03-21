@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import CardList from './components/card/cardList';
+import React, { useState, useEffect } from 'react'
+import CardList from './components/cardList';
 import { stays } from './components/stays';
-import { Container, Wrapper } from './styles/HomepageStyle';
+import { Container, Wrapper } from './styles/Layout';
 import Header from './components/header/Header';
 import './App.css';
 
@@ -9,15 +9,21 @@ const App = () => {
     const [openModal, setOpenModal] = useState(false);
     const [click, setClick] = useState(true);
     const [otherClick, setOtherClick] = useState(false);
+    const [searchInput, setSearchInput] = useState('');
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        setData([...stays])
+    }, [])
 
     const handleClick = () => {
-        setClick(!click)
+        setClick(true)
         setOtherClick(false)
         document.getElementById('guest').style.border = 'none';
         document.getElementById('title').style.border = '1px solid #000';
     }
     const otherHandleClick = () => {
-        setOtherClick(!otherClick)
+        setOtherClick(true)
         setClick(false)
         document.getElementById('title').style.border = 'none';
         document.getElementById('guest').style.border = '1px solid #000';
@@ -25,6 +31,17 @@ const App = () => {
     const handleCloseModal = () => {
         setOpenModal(!openModal)
     }
+    const onSearchChange = (e) => {
+        setSearchInput(e.target.value)
+        if (searchInput !== '') {
+            const filteredData = data.filter((item) => {
+                return item.city.toLowerCase().includes(searchInput.toLowerCase())
+            })
+            setData(filteredData)
+        }
+        else return data;
+    }
+
 
     return (
         <Wrapper>
@@ -37,12 +54,14 @@ const App = () => {
                 handleClick={handleClick}
                 otherHandleClick={otherHandleClick}
                 handleCloseModal={handleCloseModal}
+                searchChange={onSearchChange}
+                input={searchInput}
             />
             <Container>
                 <h2>Stays in Finland</h2>
-                {stays.length > 12 ? '12+ stays' : (stays.length === 1 ? '1 stay' : `${stays.length} stays`)}
+                {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
-            <CardList stays={stays} />
+            <CardList stays={data} input={searchInput} />
         </Wrapper>
     )
 }
