@@ -39,6 +39,7 @@ const DrawerItems = ({ click,
     const handleDecrementB = () => {
         setCountB(countB - 1)
     }
+    let count = countA + countB
 
     const titleStyle = {
         borderTopLeftRadius: '16px',
@@ -56,7 +57,7 @@ const DrawerItems = ({ click,
                 <LocationDiv onClick={handleClick}>
                     <LocTitle style={titleStyle} id='title'>
                         <h6>LOCATION</h6>
-                        <input type='search' placeholder='Add location' value={searchInput} onChange={(e) =>setSearchInput(e.target.value)} />
+                        <input type='search' placeholder='Add location' onChange={(e) => setSearchInput(e.target.value)} />
                     </LocTitle>
                     {
                         click ?
@@ -73,8 +74,10 @@ const DrawerItems = ({ click,
                 <GuestDiv onClick={otherHandleClick}>
                     <GuestTitle id='guest'>
                         <h6>GUESTS</h6>
-                        <input value={countA + countB > 0 ? countA + countB : 'Add guests'} readOnly ></input>
-                    </GuestTitle>
+                        {count === 0 ? <p>Add guests</p> :
+                            <input value={count === 1 ? `${count} guest` : `${count} guests`} readOnly ></input>
+
+                        }    </GuestTitle>
                     {
                         otherClick ?
                             <GuestsList
@@ -89,7 +92,7 @@ const DrawerItems = ({ click,
                 </GuestDiv>
 
                 <SearchBtn>
-                    <Search searchChange={searchChange}/>
+                    <Search searchChange={searchChange} />
                 </SearchBtn>
             </Items>
 

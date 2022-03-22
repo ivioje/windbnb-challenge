@@ -32,9 +32,12 @@ const App = () => {
         setOpenModal(!openModal)
     }
     const onSearchChange = (e) => {
+        setSearchInput(searchInput)
         e.preventDefault()
-        
     }
+        const filteredData = data.filter(items => {
+            return items.city.toLowerCase().includes(searchInput.toLowerCase())
+        })
 
 
     return (
@@ -57,7 +60,7 @@ const App = () => {
                 <h2>Stays in Finland</h2>
                 {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
-            <CardList stays={data} />
+            <CardList stays={filteredData} />
         </Wrapper>
     )
 }
