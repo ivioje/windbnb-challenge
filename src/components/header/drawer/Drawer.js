@@ -26,7 +26,24 @@ const DrawerItems = ({ click,
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
-    const [location, setLocation] = useState()
+    // const [location] = useState([
+    //     {
+    //         'id': 0,
+    //         'stay': 'Helsink, Finland'
+    //     },
+    //     {
+    //         'id': 1,
+    //         'stay': 'Helsink, Finland'
+    //     },
+    //     {
+    //         'id': 2,
+    //         'stay': 'Helsink, Finland'
+    //     },
+    //     {
+    //         'id': 3,
+    //         'stay': 'Helsink, Finland'
+    //     }
+    // ])
 
     const handleIncrementA = () => {
         setCountA(countA + 1)
@@ -64,7 +81,7 @@ const DrawerItems = ({ click,
                             <input
                                 type='text'
                                 placeholder='Add location'
-                                 />
+                            />
                         </form>
                     </LocTitle>
                     {

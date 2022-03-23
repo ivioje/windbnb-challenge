@@ -9,10 +9,7 @@ const PopUp = ({ open,
     handleClick,
     otherHandleClick,
     handleCloseModal,
-    searchChange,
-    setSearchInput,
-    searchInput
-}) => {
+    filter }) => {
 
     return (
         <>
@@ -42,9 +39,7 @@ const PopUp = ({ open,
                     handleClick={handleClick}
                     otherHandleClick={otherHandleClick}
                     handleCloseModal={handleCloseModal}
-                    searchChange={searchChange}
-                    setSearchInput={setSearchInput}
-                    searchInput={searchInput}
+                    filter={filter}
                 />
             </Modal>
         </>

@@ -12,8 +12,12 @@ const App = () => {
     const [searchInput, setSearchInput] = useState('');
     const [data, setData] = useState(stays);
 
+    let filteredStays = data.filter(stay => {
+        return stay;
+    })
+
     useEffect(() => {
-        setData([...stays])
+        setData([...data])
     }, [])
 
     const handleClick = () => {
@@ -36,6 +40,33 @@ const App = () => {
         setSearchInput(e.target.value)
     }
 
+    // const A = data.filter(e => e.city === 'Helsinki')
+    // const B = data.filter(e => e.city === 'Turku')
+    // const C = data.filter(e => e.city === 'Oulu')
+    // const D = data.filter(e => e.city === 'Vaasa')
+
+ const filterItems = () => {
+     if(filteredStays.map(e => e.city === 'Helsinki')) {
+         return data.filter(e => e.city === 'Helsinki')
+     }
+     else if(filteredStays.map(e => e.city === 'Turku')) {
+         return data.filter(e => e.city === 'Turku')
+     }
+     else if (filteredStays.map(e => e.city === 'Oulu')){
+         return data.filter(e => e.city === 'Oulu')
+     }
+     else if(filteredStays.map(e => e.city === 'Vaasa')) {
+         return data.filter(e => e.city === 'Vaasa')
+     }
+     else {
+         return filteredStays
+     }
+ }
+// console.log(data.filter(e => e.city === 'Helsinki'));
+//     const showA = () => setData(A)
+//     const showB = () => setData(B)
+//     const showC = () => setData(C)
+//     const showD = () => setData(D)
 
     return (
         <Wrapper>
@@ -51,6 +82,11 @@ const App = () => {
                 searchChange={onSearchChange}
                 setSearchInput={setSearchInput}
                 searchInput={searchInput}
+                // A={showA}
+                // B={showB}
+                // C={showC}
+                // D={showD}
+                filter={filterItems}
 
             />
             <Container>

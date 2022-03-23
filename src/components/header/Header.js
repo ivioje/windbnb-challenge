@@ -16,10 +16,7 @@ const Header = ({
     handleClick,
     otherHandleClick,
     handleCloseModal,
-    searchChange,
-    setSearchInput,
-    searchInput
-}) => {
+    filter }) => {
 
     return (
         <Container>
@@ -52,11 +49,7 @@ const Header = ({
                 handleClick={handleClick}
                 otherHandleClick={otherHandleClick}
                 handleCloseModal={handleCloseModal}
-                searchChange={searchChange}
-                setSearchInput={setSearchInput}
-                searchInput={searchInput}
-
-
+                filter={filter}
             />
         </Container>
     )
