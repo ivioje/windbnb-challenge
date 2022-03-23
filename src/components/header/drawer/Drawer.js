@@ -26,6 +26,7 @@ const DrawerItems = ({ click,
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
+    const [location, setLocation] = useState()
 
     const handleIncrementA = () => {
         setCountA(countA + 1)
@@ -40,6 +41,8 @@ const DrawerItems = ({ click,
         setCountB(countB - 1)
     }
     let count = countA + countB
+
+
 
     const titleStyle = {
         borderTopLeftRadius: '16px',
@@ -57,7 +60,12 @@ const DrawerItems = ({ click,
                 <LocationDiv onClick={handleClick}>
                     <LocTitle style={titleStyle} id='title'>
                         <h6>LOCATION</h6>
-                        <input type='search' placeholder='Add location' onChange={(e) => setSearchInput(e.target.value)} />
+                        <form>
+                            <input
+                                type='text'
+                                placeholder='Add location'
+                                 />
+                        </form>
                     </LocTitle>
                     {
                         click ?
