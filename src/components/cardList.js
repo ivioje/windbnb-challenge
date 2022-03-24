@@ -6,7 +6,7 @@ const CardList = ({ stays }) => {
 
     return (
         <div className='mappedCards'>
-            {stays.map((stay) => (
+            {stays && stays.map((stay) => (
                 <div className='container' key={stay.id}>
                     <div className='contents'>
                         <img
