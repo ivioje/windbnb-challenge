@@ -17,7 +17,7 @@ const App = () => {
     })
 
     useEffect(() => {
-        setData([...data])
+        setData(filteredStays)
     }, [])
 
     const handleClick = () => {
@@ -26,47 +26,66 @@ const App = () => {
         document.getElementById('guest').style.border = 'none';
         document.getElementById('title').style.border = '1px solid #000';
     }
+
     const otherHandleClick = () => {
         setOtherClick(true)
         setClick(false)
         document.getElementById('title').style.border = 'none';
         document.getElementById('guest').style.border = '1px solid #000';
     }
+
     const handleCloseModal = () => {
         setOpenModal(!openModal)
     }
+
     const onSearchChange = (e) => {
         e.preventDefault()
         setSearchInput(e.target.value)
     }
 
-    // const A = data.filter(e => e.city === 'Helsinki')
-    // const B = data.filter(e => e.city === 'Turku')
-    // const C = data.filter(e => e.city === 'Oulu')
-    // const D = data.filter(e => e.city === 'Vaasa')
+    const A = filteredStays.filter(e => e.city === 'Helsinki')
+    const B = filteredStays.filter(e => e.city === 'Turku')
+    const C = filteredStays.filter(e => e.city === 'Oulu')
+    const D = filteredStays.filter(e => e.city === 'Vaasa')
 
- const filterItems = () => {
-     if(filteredStays.map(e => e.city === 'Helsinki')) {
-         return data.filter(e => e.city === 'Helsinki')
-     }
-     else if(filteredStays.map(e => e.city === 'Turku')) {
-         return data.filter(e => e.city === 'Turku')
-     }
-     else if (filteredStays.map(e => e.city === 'Oulu')){
-         return data.filter(e => e.city === 'Oulu')
-     }
-     else if(filteredStays.map(e => e.city === 'Vaasa')) {
-         return data.filter(e => e.city === 'Vaasa')
-     }
-     else {
-         return filteredStays
-     }
- }
-// console.log(data.filter(e => e.city === 'Helsinki'));
-//     const showA = () => setData(A)
-//     const showB = () => setData(B)
-//     const showC = () => setData(C)
-//     const showD = () => setData(D)
+
+    //  const filterItems = () => {
+    //      if(filteredStays.map(e => e.city === 'Helsinki')) {
+    //          return data.filter(e => e.city === 'Helsinki')
+    //      }
+    //      else if(filteredStays.map(e => e.city === 'Turku')) {
+    //          return data.filter(e => e.city === 'Turku')
+    //      }
+    //      else if (filteredStays.map(e => e.city === 'Oulu')){
+    //          return data.filter(e => e.city === 'Oulu')
+    //      }
+    //      else if(filteredStays.map(e => e.city === 'Vaasa')) {
+    //          return data.filter(e => e.city === 'Vaasa')
+    //      }
+    //      else {
+    //          return filteredStays
+    //      }
+    //  }
+    const filterItems = () => {
+        if (A) {
+            setData(A)
+            console.log(A);
+        } else if (B) {
+            setData(B)
+            console.log(B);
+        } else if (C) {
+            setData(C)
+            console.log(C);
+        } else if (D) {
+            setData(D)
+            console.log(D);
+        } else {
+            setData(filteredStays)
+        }
+    }
+    // const showB = () => setData(B)
+    // const showC = () => setData(C)
+    // const showD = () => setData(D)
 
     return (
         <Wrapper>
@@ -93,7 +112,7 @@ const App = () => {
                 <h2>Stays in Finland</h2>
                 {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
-            <CardList stays={data} />
+            <CardList stays={filteredStays} />
         </Wrapper>
     )
 }

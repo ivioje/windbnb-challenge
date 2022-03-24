@@ -21,29 +21,30 @@ const DrawerItems = ({ click,
     handleCloseModal,
     searchChange,
     setSearchInput,
-    searchInput
-}) => {
+    searchInput,
+    filter
+ }) => {
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
-    // const [location] = useState([
-    //     {
-    //         'id': 0,
-    //         'stay': 'Helsink, Finland'
-    //     },
-    //     {
-    //         'id': 1,
-    //         'stay': 'Helsink, Finland'
-    //     },
-    //     {
-    //         'id': 2,
-    //         'stay': 'Helsink, Finland'
-    //     },
-    //     {
-    //         'id': 3,
-    //         'stay': 'Helsink, Finland'
-    //     }
-    // ])
+    const [locations, setLocations] = useState([
+        {
+            'id': 0,
+            'stay': 'Helsink, Finland'
+        },
+        {
+            'id': 1,
+            'stay': 'Turku, Finland'
+        },
+        {
+            'id': 2,
+            'stay': 'Oulu, Finland'
+        },
+        {
+            'id': 3,
+            'stay': 'Vaasa, Finland'
+        }
+    ])
 
     const handleIncrementA = () => {
         setCountA(countA + 1)
@@ -81,16 +82,20 @@ const DrawerItems = ({ click,
                             <input
                                 type='text'
                                 placeholder='Add location'
+
                             />
                         </form>
                     </LocTitle>
                     {
                         click ?
                             <LocationList>
-                                <p>Helsink, Finland</p>
-                                <p>Turku, Finland</p>
-                                <p>Oulu, Finland</p>
-                                <p>Vaasa, Finland</p>
+                                {/* <p onClick={filter}>Helsink, Finland</p>
+                                <p onClick={filter}>Turku, Finland</p>
+                                <p onClick={filter}>Oulu, Finland</p>
+                                <p onClick={filter}>Vaasa, Finland</p> */}
+                                {locations.map((location) => (
+                                    <p key={location.id} onClick={filter}>{location.stay}</p>
+                                ))}
                             </LocationList>
                             : null
                     }
