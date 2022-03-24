@@ -16,7 +16,10 @@ const Header = ({
     handleClick,
     otherHandleClick,
     handleCloseModal,
-    filter }) => {
+    filter,
+    filterLocation,
+    setFilterLocation,
+    stays }) => {
 
     return (
         <Container>
@@ -51,7 +54,10 @@ const Header = ({
                 handleCloseModal={handleCloseModal}
                 // A={A} B={B} C={C} D={D}  
                 filter={filter}
-                          />
+                filterLocation={filterLocation}
+                setFilterLocation={setFilterLocation}
+                stays={stays}
+            />
         </Container>
     )
 }

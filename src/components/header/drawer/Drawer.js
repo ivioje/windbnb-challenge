@@ -22,12 +22,14 @@ const DrawerItems = ({ click,
     searchChange,
     setSearchInput,
     searchInput,
+    filterLocation,
+    setFilterLocation,
     filter
  }) => {
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
-    const [locations, setLocations] = useState([
+    const [locations] = useState([
         {
             'id': 0,
             'stay': 'Helsink, Finland'
@@ -82,6 +84,8 @@ const DrawerItems = ({ click,
                             <input
                                 type='text'
                                 placeholder='Add location'
+                                value={filterLocation}
+                                readOnly
 
                             />
                         </form>
@@ -94,7 +98,7 @@ const DrawerItems = ({ click,
                                 <p onClick={filter}>Oulu, Finland</p>
                                 <p onClick={filter}>Vaasa, Finland</p> */}
                                 {locations.map((location) => (
-                                    <p key={location.id} onClick={filter}>{location.stay}</p>
+                                    <p key={location.id} onClick={(e) => setFilterLocation(e.target.innerText) }>{location.stay}</p>
                                 ))}
                             </LocationList>
                             : null
@@ -122,7 +126,7 @@ const DrawerItems = ({ click,
                 </GuestDiv>
 
                 <SearchBtn>
-                    <Search searchChange={searchChange} />
+                    <Search filter={filter} />
                 </SearchBtn>
             </Items>
 

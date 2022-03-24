@@ -11,6 +11,8 @@ const App = () => {
     const [otherClick, setOtherClick] = useState(false);
     const [searchInput, setSearchInput] = useState('');
     const [data, setData] = useState(stays);
+    const [filterLocation, setFilterLocation] = useState('')
+
 
     let filteredStays = data.filter(stay => {
         return stay;
@@ -66,21 +68,18 @@ const App = () => {
     //          return filteredStays
     //      }
     //  }
-    const filterItems = () => {
-        if (A) {
-            setData(A)
-            console.log(A);
-        } else if (B) {
-            setData(B)
-            console.log(B);
-        } else if (C) {
-            setData(C)
-            console.log(C);
-        } else if (D) {
-            setData(D)
-            console.log(D);
-        } else {
+    const filterItems = (e) => {
+        e.preventDefault();
+        if (filterLocation === '') {
             setData(filteredStays)
+        } else if (filterLocation.includes(data.filter(d => d.city === 'Helsinki'))) {
+            setData(A)
+        } else if (filterLocation.split()[0] === 'Turku') {
+            setData(B)
+        } else if (filterLocation.split()[0] === 'Oulu') {
+            setData(C)
+        } else if (filterLocation.split()[0] === 'Vaasa') {
+            setData(D)
         }
     }
     // const showB = () => setData(B)
@@ -106,11 +105,13 @@ const App = () => {
                 // C={showC}
                 // D={showD}
                 filter={filterItems}
+                filterLocation={filterLocation}
+                setFilterLocation={setFilterLocation}
 
             />
             <Container>
                 <h2>Stays in Finland</h2>
-                {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
+                {filteredStays.length > 12 ? '12+ stays' : (filteredStays.length === 1 ? '1 stay' : `${filteredStays.length} stays`)}
             </Container>
             <CardList stays={filteredStays} />
         </Wrapper>

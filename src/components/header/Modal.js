@@ -9,7 +9,9 @@ const PopUp = ({ open,
     handleClick,
     otherHandleClick,
     handleCloseModal,
-    filter }) => {
+    filter,
+    filterLocation,
+    setFilterLocation }) => {
 
     return (
         <>
@@ -41,7 +43,10 @@ const PopUp = ({ open,
                     handleCloseModal={handleCloseModal}
                     // A={A} B={B} C={C} D={D}    
                     filter={filter}
-                    />
+                    filterLocation={filterLocation}
+                    setFilterLocation={setFilterLocation}
+
+                />
             </Modal>
         </>
     )
