@@ -43,10 +43,10 @@ const App = () => {
         setSearchInput(e.target.value)
     }
 
-    const A = filteredStays.filter(e => e.city === 'Helsinki')
-    const B = filteredStays.filter(e => e.city === 'Turku')
-    const C = filteredStays.filter(e => e.city === 'Oulu')
-    const D = filteredStays.filter(e => e.city === 'Vaasa')
+    const A = filteredStays.filter(e => e.city === "Helsinki")
+    const B = filteredStays.filter(e => e.city === "Turku")
+    const C = filteredStays.filter(e => e.city === "Oulu")
+    const D = filteredStays.filter(e => e.city === "Vaasa")
 
 
     //  const filterItems = () => {
