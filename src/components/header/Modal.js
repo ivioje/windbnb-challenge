@@ -41,7 +41,6 @@ const PopUp = ({ open,
                     handleClick={handleClick}
                     otherHandleClick={otherHandleClick}
                     handleCloseModal={handleCloseModal}
-                    // A={A} B={B} C={C} D={D}    
                     filter={filter}
                     filterLocation={filterLocation}
                     setFilterLocation={setFilterLocation}
