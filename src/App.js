@@ -70,7 +70,7 @@ const App = () => {
 
             />
             <Container>
-                <h2>Stays in <span style={{'color':'#DC143C'}}>{locationClicked}</span> Finland</h2>
+                <h2>Stays in <span>{locationClicked}</span> Finland</h2>
                 {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
             <CardList stays={data} />

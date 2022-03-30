@@ -11,6 +11,13 @@ margin: 1.5rem;
     font-size: 19px;
     }
 }
+
+& span {
+    color: #DC143C;
+    @media screen and (max-width: 450px){
+    font-size: 15px;
+    }
+}
 `;
 
 export const H2 = styled.h2`
