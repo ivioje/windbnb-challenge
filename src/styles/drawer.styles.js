@@ -155,17 +155,23 @@ background: transparent;
 border: 1px solid #4F4F4F;
 width: 25px;
 height: 25px;
-margin: 8px;
+margin: 5px;
 border-radius: 5px;
 cursor: pointer;
 }
 
 `;
 export const Adult = styled.div`
-
+& div {
+    display: flex;
+    align-items: center;
+}
 `;
 export const Children = styled.div`
-
+& div {
+    display: flex;
+    align-items: center;
+}
 `;
 export const Button1 = styled.div`
 padding: .4rem;

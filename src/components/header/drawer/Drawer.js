@@ -11,7 +11,7 @@ import {
     GuestDiv,
     SearchBtn
 } from '../../../styles/drawer.styles'
-import GuestsList from './Button';
+import GuestsList from './guestList';
 
 
 const DrawerItems = ({ click,
@@ -21,8 +21,7 @@ const DrawerItems = ({ click,
     handleCloseModal,
     filterLocation,
     setFilterLocation,
-    filter
- }) => {
+    filter }) => {
 
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
@@ -95,7 +94,7 @@ const DrawerItems = ({ click,
                                 <p onClick={filter}>Oulu, Finland</p>
                                 <p onClick={filter}>Vaasa, Finland</p> */}
                                 {locations.map((location) => (
-                                    <p key={location.id} onClick={(e) => setFilterLocation(e.target.innerText) }>{location.stay}</p>
+                                    <p key={location.id} onClick={(e) => setFilterLocation(e.target.innerText)}>{location.stay}</p>
                                 ))}
                             </LocationList>
                             : null
@@ -107,9 +106,8 @@ const DrawerItems = ({ click,
                         <h6>GUESTS</h6>
                         {count === 0 ? <p>Add guests</p> :
                             <input value={count === 1 ? `${count} guest` : `${count} guests`} readOnly ></input>
-
                         }    </GuestTitle>
-                    {
+                        {
                         otherClick ?
                             <GuestsList
                                 incrementA={handleIncrementA}
@@ -119,7 +117,7 @@ const DrawerItems = ({ click,
                                 countA={countA} countB={countB}
                             />
                             : null
-                    }
+                        }
                 </GuestDiv>
 
                 <SearchBtn>

@@ -12,6 +12,7 @@ const App = () => {
     const [searchInput, setSearchInput] = useState('');
     const [data, setData] = useState(stays);
     const [filterLocation, setFilterLocation] = useState('');
+    //const [filterGuests,  setFilterGuests] = useState('');
 
     const handleClick = () => {
         setClick(true)
@@ -36,14 +37,15 @@ const App = () => {
         setSearchInput(e.target.value)
     }
 
+    const locationClicked = filterLocation.split(',')[0]
+
     const filterItems = (e) => {
         e.preventDefault();
         if (filterLocation === '') {
             setData(data)
         }
-        const locationClicked = filterLocation.split(',')[0]
 
-        const filteredStays = stays.filter(stay => stay.city === locationClicked)
+        const filteredStays = stays.filter(stay => stay.city === locationClicked) 
 
         setData(filteredStays)
     }
@@ -68,7 +70,7 @@ const App = () => {
 
             />
             <Container>
-                <h2>Stays in Finland</h2>
+                <h2>Stays in <span style={{'color':'#DC143C'}}>{locationClicked}</span> Finland</h2>
                 {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
             <CardList stays={data} />
