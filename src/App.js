@@ -13,13 +13,8 @@ const App = () => {
     const [data, setData] = useState(stays);
     const [filterLocation, setFilterLocation] = useState('')
 
-
-    let filteredStays = data.filter(stay => {
-        return stay;
-    })
-
     useEffect(() => {
-        setData(filteredStays)
+        setData(data)
     }, [])
 
     const handleClick = () => {
@@ -45,10 +40,10 @@ const App = () => {
         setSearchInput(e.target.value)
     }
 
-    const A = filteredStays.filter(e => e.city === "Helsinki")
-    const B = filteredStays.filter(e => e.city === "Turku")
-    const C = filteredStays.filter(e => e.city === "Oulu")
-    const D = filteredStays.filter(e => e.city === "Vaasa")
+    const A = data.filter(e => e.city === "Helsinki")
+    const B = data.filter(e => e.city === "Turku")
+    const C = data.filter(e => e.city === "Oulu")
+    const D = data.filter(e => e.city === "Vaasa")
 
 
     //  const filterItems = () => {
@@ -82,9 +77,6 @@ const App = () => {
             setData(D)
         }
     }
-    // const showB = () => setData(B)
-    // const showC = () => setData(C)
-    // const showD = () => setData(D)
 
     return (
         <Wrapper>
@@ -100,10 +92,6 @@ const App = () => {
                 searchChange={onSearchChange}
                 setSearchInput={setSearchInput}
                 searchInput={searchInput}
-                // A={showA}
-                // B={showB}
-                // C={showC}
-                // D={showD}
                 filter={filterItems}
                 filterLocation={filterLocation}
                 setFilterLocation={setFilterLocation}
