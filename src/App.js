@@ -66,7 +66,7 @@ const App = () => {
     const filterItems = (e) => {
         e.preventDefault();
         if (filterLocation === '') {
-            setData(filteredStays)
+            setData(data)
         } else if (filterLocation.split(',')[0] === 'Helsinki') {
             setData(A)
         } else if (filterLocation.split(',')[0] === 'Turku') {
@@ -99,9 +99,9 @@ const App = () => {
             />
             <Container>
                 <h2>Stays in Finland</h2>
-                {filteredStays.length > 12 ? '12+ stays' : (filteredStays.length === 1 ? '1 stay' : `${filteredStays.length} stays`)}
+                {data.length > 12 ? '12+ stays' : (data.length === 1 ? '1 stay' : `${data.length} stays`)}
             </Container>
-            <CardList stays={filteredStays} />
+            <CardList stays={data} />
         </Wrapper>
     )
 }
