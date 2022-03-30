@@ -72,13 +72,13 @@ const App = () => {
         e.preventDefault();
         if (filterLocation === '') {
             setData(filteredStays)
-        } else if (filterLocation.includes(data.filter(d => d.city === 'Helsinki'))) {
+        } else if (filterLocation.split(',')[0] === 'Helsinki') {
             setData(A)
-        } else if (filterLocation.split()[0] === 'Turku') {
+        } else if (filterLocation.split(',')[0] === 'Turku') {
             setData(B)
-        } else if (filterLocation.split()[0] === 'Oulu') {
+        } else if (filterLocation.split(',')[0] === 'Oulu') {
             setData(C)
-        } else if (filterLocation.split()[0] === 'Vaasa') {
+        } else if (filterLocation.split(',')[0] === 'Vaasa') {
             setData(D)
         }
     }

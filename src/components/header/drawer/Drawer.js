@@ -32,7 +32,7 @@ const DrawerItems = ({ click,
     const [locations] = useState([
         {
             'id': 0,
-            'stay': 'Helsink, Finland'
+            'stay': 'Helsinki, Finland'
         },
         {
             'id': 1,
